@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Health_DCS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/src/Proyectos/Health DSC/health-dsc-api/ReservarCita/templates/HTML/PACIENTE/'],
+        'DIRS': ['ReservarCita/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'project_software',
         'USER': 'root',
-        'PASSWORD': 'admin1106',
+        'PASSWORD': 'admin1106',   #Ingresar credenciales base de datos
         'HOST': 'localhost',
         'PORT': '3306',
     }
