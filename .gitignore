@@ -1,0 +1,11 @@
+# local env files
+.env.local
+.env.*.local
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
