@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Seguro',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('tipo', models.CharField(choices=[('FIE', 'Financiados íntegramente por el Estado'), ('FE', 'Financiados por el Estado'), ('FEA', 'Financiado por empleadores o afiliados')], default='', max_length=25)),
                 ('aseguradora', models.CharField(default='', max_length=25)),
             ],
@@ -22,6 +22,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='paciente',
             name='aseguradora',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.RESTRICT, to='ReservarCita.seguro'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='ReservarCita.seguro'),
         ),
     ]

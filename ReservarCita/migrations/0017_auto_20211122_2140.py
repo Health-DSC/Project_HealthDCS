@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Horario',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('hora_inicio', models.TimeField(default=datetime.time, verbose_name='Hora de inicio')),
                 ('hora_fin', models.TimeField(default=datetime.time, verbose_name='Hora de termino')),
                 ('turno', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ReservarCita.turno')),
@@ -37,6 +37,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='medico',
             name='horario',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.RESTRICT, to='ReservarCita.horario'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='ReservarCita.horario'),
         ),
     ]

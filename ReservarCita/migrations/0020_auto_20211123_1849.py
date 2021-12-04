@@ -15,14 +15,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Sede',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('ubicacion', models.CharField(default='', max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='Transaccion',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('codigo_operacion', models.IntegerField(default=0, verbose_name='Código de operación')),
                 ('fecha', models.DateField(default=datetime.date.today)),
                 ('monto', models.IntegerField(default=0)),

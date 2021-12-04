@@ -9,6 +9,7 @@ import datetime
 class Seguro(models.Model):
     tipo=models.CharField(max_length=25,choices=tipo_seguro,default='')
     aseguradora = models.CharField(max_length=25,default='')
+
 class Turno(models.Model):
     id_turno =models.CharField(max_length=8,default='',primary_key=True, verbose_name='Código del turno')
     hora_inicio = models.TimeField(default=datetime.time,verbose_name='Hora de inicio')
@@ -39,12 +40,12 @@ class Horario(models.Model):
 class Persona(models.Model):
     nombres = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=50)
-    dni = models.IntegerField(default=73118828,verbose_name='DNI')
+    dni = models.IntegerField(verbose_name='DNI', unique=True)
     sexo = models.CharField(max_length=12,choices=sexos,verbose_name='Sexo')
     fecha_nacimiento = models.DateField(default=datetime.date.today,verbose_name='Fecha de nacimiento')
     estado_civil = models.CharField(max_length=20, choices=estado_civil,verbose_name='Estado civil')
     direccion = models.CharField(max_length=100,default='',verbose_name='Direccion')
-    celular = models.IntegerField(default=934776248)
+    celular = models.IntegerField()
     correo_electronico = models.EmailField(max_length=50,verbose_name='Correo electrónico',default=' ')
     contrasenia = models.CharField(max_length=35,verbose_name='Contraseña',blank=True)
     
@@ -65,19 +66,19 @@ class Especialidad(models.Model):
 class Medico(models.Model):
     persona = models.OneToOneField(Persona,on_delete=models.CASCADE,primary_key=True)
     habilitado = models.BooleanField(default=1)
-    especialidad = models.ForeignKey(Especialidad,null=True,blank=True,on_delete=models.RESTRICT)
-    horario = models.ForeignKey(Horario,null=True,blank=True,on_delete=models.RESTRICT)
+    especialidad = models.ForeignKey(Especialidad,null=True,blank=True,on_delete=models.CASCADE)
+    horario = models.ForeignKey(Horario,null=True,blank=True,on_delete=models.CASCADE)
 
 
 class Paciente(models.Model):
     persona = models.OneToOneField(Persona,on_delete=models.CASCADE,primary_key=True)
     id_seguro = models.IntegerField(default=0)
     tipo_sangre = models.CharField(max_length=3,choices=tipo_sangre,default='O')
-    aseguradora = models.ForeignKey(Seguro,on_delete=models.RESTRICT,null=True,blank=True)
-    antecedente_familiar = models.ForeignKey(AntecedenteFamiliar,on_delete=models.RESTRICT,null=True,blank=True)
-    antecedente_alergico = models.ForeignKey(AntecedenteAlergico,on_delete=models.RESTRICT,null=True,blank=True)
-    antecedente_general = models.ForeignKey(AntecedenteGeneral,on_delete=models.RESTRICT,null=True,blank=True)
-    triaje = models.ForeignKey(Triaje,on_delete=models.RESTRICT,null=True,blank=True)
+    aseguradora = models.ForeignKey(Seguro,on_delete=models.CASCADE,null=True,blank=True)
+    antecedente_familiar = models.ForeignKey(AntecedenteFamiliar,on_delete=models.CASCADE,null=True,blank=True)
+    antecedente_alergico = models.ForeignKey(AntecedenteAlergico,on_delete=models.CASCADE,null=True,blank=True)
+    antecedente_general = models.ForeignKey(AntecedenteGeneral,on_delete=models.CASCADE,null=True,blank=True)
+    triaje = models.ForeignKey(Triaje,on_delete=models.CASCADE,null=True,blank=True)
 
 
 class Tecnologo(models.Model):
@@ -96,9 +97,9 @@ class Cita(models.Model):
     fecha = models.DateField(default=datetime.date.today)
     hora = models.TimeField(default=datetime.time)
     confirmacion = models.BooleanField(default=1)
-    paciente = models.ForeignKey(Paciente,on_delete=models.CASCADE)
-    medico = models.ForeignKey(Medico,on_delete=models.CASCADE)
-    tecnologo = models.ForeignKey(Tecnologo,on_delete=models.CASCADE)
+    paciente = models.ForeignKey(Paciente,on_delete=models.CASCADE, null=True,blank=True)
+    medico = models.ForeignKey(Medico,on_delete=models.CASCADE, null=True,blank=True)
+    tecnologo = models.ForeignKey(Tecnologo,on_delete=models.CASCADE, null=True,blank=True)
     sede = models.ForeignKey(Sede,on_delete=models.CASCADE, null=True,blank=True)
     transaccion = models.ForeignKey(Transaccion,on_delete=models.CASCADE,null=True,blank=True)
 

@@ -17,14 +17,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Diagnostico',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('descripcion', models.CharField(default='', max_length=200)),
             ],
         ),
         migrations.CreateModel(
             name='Recurso',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('fecha', models.DateField(default=datetime.date.today)),
                 ('descripcion', models.CharField(default='', max_length=100)),
                 ('ruta', models.URLField(default='')),
@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Resonancia',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('recurso', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Resultados.recurso')),
                 ('tecnologo', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='ReservarCita.tecnologo')),
             ],
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tratamiento',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('descripcion', models.CharField(default='', max_length=200)),
                 ('Diagnostico', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Resultados.diagnostico')),
             ],
@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Resultado',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('cita', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='ReservarCita.cita')),
                 ('resonancia', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Resultados.resonancia')),
             ],
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Imagen',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('probabilidad', models.FloatField(default=0.0)),
                 ('precision', models.FloatField(default=0.0)),
                 ('recurso', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Resultados.recurso')),

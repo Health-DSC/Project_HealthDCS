@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+STATICFILES_DIRS = ['ReservarCita/templates/static']
 # Application definition
 
 INSTALLED_APPS = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'Health_DCS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/src/Proyectos/Health DSC/health-dsc-api/ReservarCita/templates/HTML/PACIENTE/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'Health_DCS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'project_software',
+        'USER': 'root',
+        'PASSWORD': 'admin1106',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -124,4 +129,4 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

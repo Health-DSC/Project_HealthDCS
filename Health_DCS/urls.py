@@ -15,7 +15,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ReservarCita import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.Index),
+    path('iniciarsesion/', views.IniciarSesion, name='iniciarsesion'),
+    path('registropaciente/', views.RegistroPaciente),
+    
+    path('ConfirmarCita/', views.ConfirmarCita),
+    path('FechaCita/', views.FechaCita),
+    path('MiCuenta/', views.MiCuenta),
+    path('MisCitas/', views.MisCitas),
+    path('notificaciones/', views.notificaciones),
+    path('ConfirmarImagen/', views.ConfirmarImagen),
+    path('RecuperoContraseña/', views.RecuperoContraseña),
+    path('SubirImagen/', views.SubirImagen),
+    path('Especialidades/', views.Especialidades),
+    path('Nosotros/', views.Nosotros),
+    path('PreguntasFrecuentes/', views.PreguntasFrecuentes),
+    path('Reporte/', views.Reporte),
+    path('Servicios/', views.Servicios),
+    path('Portada/', views.Index),
+    path('FinalCita/', views.FinalCita),
+    path('MensajeConfirmación/', views.MensajeConfirmación),
+    
+    path('AgendarCita/', views.AgendarCita),
+    path('agendarcita/elegirmedico/', views.ElegirMedico),
+
 ]
