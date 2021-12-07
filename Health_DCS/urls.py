@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ReservarCita import views
+from Resultados import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,8 +40,9 @@ urlpatterns = [
     path('Portada/', views.Index),
     path('FinalCita/', views.FinalCita),
     path('MensajeConfirmación/', views.MensajeConfirmación),
-    
     path('AgendarCita/', views.AgendarCita),
     path('agendarcita/elegirmedico/', views.ElegirMedico),
+    path('classify/', v.index, name='classify'),
+    path('classify/predict', v.classify, name='predict'),
 
 ]

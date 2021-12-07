@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ReservarCita',
     'Resultados',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
