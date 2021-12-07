@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/Health-PNG-Image.png' %}">
+    <link rel="stylesheet" href="{% static '/lato.css' %}">
+    <link rel="stylesheet" href="{% static '/styles.css' %}">
+    <title>Registro de Usuario - HEALTH DCS</title>
+</head>
+
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHSSZBT" height="0" width="0" style="display:none; visibility:hidden"> </iframe>
+    </noscript>
+    
+    
+    <header>
+        <nav class="headerContainer">
+            <img class="loadLazy visibleLazy" data-src="{% static '/img/Health-PNG-Image.png' %}" alt="" src="{% static '/img/Health-PNG-Image.png' %}">
+            <a class="headerLogo">Health DSC</a>
+            <ul class="headerMenu bold">
+                
+                <li class="menuLink  "> <a href="Nosotros.html"> NOSOTROS </a> </li>
+                <li class="menuLink  "> <a href="Servicios.html"> SERVICIOS </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Centro de Imágenes</a> </li>
+                        <li class="subMenuLink"> <a>Centro Quirúrgico</a> </li>
+                        <li class="subMenuLink"> <a>Laboratorio</a> </li>
+                        <li class="subMenuLink"> <a>Servicios Adicionales</a> </li>
+    
+                    </ul>
+                </li>
+                <li class="menuLink  "> <a href="Especialidades.html"> ESPECIALIDADES </a> </li>
+                
+                <li class="menuLink  "> <a> CONTACTO </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Correo oficial: clinica@gmail.com</a><br> </li>
+                        <li class="subMenuLink"> <a>Central telefónica: 987654321</a> </li>
+                        
+    
+                    </ul>
+                </li>
+
+                <li class="menuLink  "> <a href="PreguntasFrecuentes.html"> PREGUNTAS FRECUENTES </a> </li>
+                <li class="menuLink imgRight">
+					<a href="{% url 'iniciarsesion' %}"> <img class="loadLazy avatarLogin" 
+                        data-src="{% static '/img/user.svg' %}" alt=""> <label>INICIAR SESIÓN</label> </a>
+				</li>
+                        
+            </ul>
+    
+        </nav>
+    </header>
+
+    <main>
+        <div class="contentBody ">
+            <div class="centerBody allWithoutMenu">
+                <h2>REGISTRO DE USUARIO</h2>
+                <br>
+                <!-- id="formstep1" novalidate="novalidate" -->
+                 
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="contCamp centerCamp">
+                        <select name="tipo_documento" id="tipdoc" required="" aria-required="true" class="sucess" aria-invalid="false">
+                            <option value="0">Tipo de Documento</option>
+                            <option value="D">DNI</option>
+                            <option value="C">Carnet de Extranjería</option>
+                            <option value="P">Pasaporte</option>
+                            <option value="R">RUC</option>
+                        </select>
+                        <br>
+                        <label id="tipdoc-error" class="error valid" for="tipdoc"></label>
+                    </div>
+                    <!-- <div class="contCamp oneCamp errorInput" > 
+                    <input type="text" name="nombre_usuario" id="nomuser" required="" value="" aria-required="true">    
+                    -->
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="nomuser">Nombre(s) <span></span></label>
+                        {{ form.nombres }} </div>
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="apeuser">Apellido(s) <span></span></label>
+                        {{ form.apellidos }} </div>
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="numdoc">Número de Documento <span>*</span></label>
+                        {{ form.dni }} </div>
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="numdoc">Sexo <span>*</span></label>
+                        {{ form.sexo }} </div>
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="numdoc">Fecha de nacimiento <span>*</span></label>
+                        {{ form.fecha_nacimiento }} </div> 
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="numdoc">Estado civil <span>*</span></label>
+                        {{ form.estado_civil }} </div>
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="numdoc">Direccion <span>*</span></label>
+                        {{ form.direccion }} </div>   
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="">Correo <span>*</span></label>
+                        {{ form.correo_electronico }} </div>
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="">Celular<span>*</span></label>
+                        {{ form.celular }} </div>
+                    <div class="contCamp oneCamp errorInput">
+                        <label for="">Contraseña <span>*</span></label>
+                        {{ form.contrasenia }} </div>
+
+                    <div class="contBtnAround marginTB"> <button type="submit", class="btn btnBig btnRed btnNext btnInput" >GUARDAR</button> </div>
+                    <!-- <a class="btn btnBig btnRed btnNext btnInput" id="btnstep1">GUARDAR</a> -->
+                </form>
+            </div>
+        </div>
+    </main>
+    
+</body>
+<script src="https://www.clinicapj.org.pe/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/custom.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/clinica.js" type="text/javascript"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122325028-2" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-122325028-2');
+    </script>
+
+</html>

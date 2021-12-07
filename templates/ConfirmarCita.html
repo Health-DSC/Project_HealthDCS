@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <! –– Tipo de referencia estática ––>
+        <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/Health-PNG-Image.png' %}">
+        <link rel="stylesheet" href="{% static '/lato.css' %}">
+        <link rel="stylesheet" href="{% static '/styles.css' %}">
+
+        <title>Agendar Cita - Health DSC</title>
+</head>
+
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHSSZBT" height="0" width="0" style="display:none; visibility:hidden"> </iframe>
+    </noscript>
+    
+    <header>
+        <nav class="headerContainer">
+            <img class="loadLazy visibleLazy" data-src="{% static '/img/Health-PNG-Image.png' %}" alt=""
+                src="{% static '/img/Health-PNG-Image.png' %}">
+            <a class="headerLogo">Health DSC</a>
+            <ul class="headerMenu bold">
+                
+                <li class="menuLink  "> <a href="Nosotros.html"> NOSOTROS </a> </li>
+                <li class="menuLink  "> <a href="Servicios.html"> SERVICIOS </a>                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Centro de Imágenes</a> </li>
+                        <li class="subMenuLink"> <a>Centro Quirúrgico</a> </li>
+                        <li class="subMenuLink"> <a>Laboratorio</a> </li>
+                        <li class="subMenuLink"> <a>Servicios Adicionales</a> </li>
+    
+                    </ul>
+                </li>
+                <li class="menuLink  "> <a href="Especialidades.html"> ESPECIALIDADES </a> </li>
+                
+                <li class="menuLink  "> <a> CONTACTO </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Correo oficial: clinica@gmail.com</a><br> </li>
+                        <li class="subMenuLink"> <a>Central telefónica: 987654321</a> </li>
+                        
+    
+                    </ul>
+                </li>
+
+                <li class="menuLink  "> <a href="PreguntasFrecuentes.html"> PREGUNTAS FRECUENTES </a> </li>
+                <li class="menuLink bgRed ">
+                    <a> <img class="loadLazy visibleLazy" data-src="https://www.clinicapj.org.pe/images/central-telefonica.svg" alt="" src="https://www.clinicapj.org.pe/images/central-telefonica.svg"> BIENVENIDO</a>
+                    
+                </li>
+                        
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="contentSlider"> <img src="{% static '/img/BANNER.jpg' %}"> </div>
+        <div class="contentBody ">
+            <div class="centerBody allWithMenu">
+                <div class="contentMenu">
+                    <div class="links">
+                        <div class="linksContainer">
+                            <a href="AgendarCita.html" class="login-menu linksBorder linkActive">
+                                <div class="linkContent marginTB">
+                                    <p >Agendar cita</p>
+                                </div>
+                            </a>
+                            <a href="MisCitas.html" class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Mis citas</p>
+                                </div>
+                            </a>
+                            <a class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Médicos favoritos</p> 
+                                </div>
+                            </a>
+                            <a class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Miembros</p>
+                                </div>
+                            </a>
+                            <a href="MiCuenta.html" class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Mi cuenta</p>
+                                </div>
+                            </a>
+                            <a href="notificaciones.html" class="login-menu linksBorder">
+                                <div class="linkContent marginTB">
+                                    <p>Notificaciones</p>
+                                </div>
+                            </a>
+                            <a href="IniciarSesion.html" class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Cerrar Sesión</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentWithMenu">
+                    <div class="containerAll">
+                        <h2 align="center">AGENDAR CITA</h2>
+                    <br>
+                    <br>
+                    <h3 align="center">Encuentra a tu médico</h3>
+                    <br>
+                    <form method="GET" action="/agendarcita/elegirmedico/"
+                        accept-charset="UTF-8" class="formSearch">
+                        <input type="hidden" name="pagina" value="1">
+                        <div class="contCamp threeCamps inputSearch">
+                            <select name="especialidad" id="id-espec">
+                                <option value="1">NEUROLOGÍA</option>
+                                <option value="2">NEUROLOGÍA PEDIÁTRICA</option>
+                                
+                            </select>
+                        </div>
+                        <div class="contCamp threeCamps inputMedico inputSearch">
+                            <input type="text" name="medico" id="medico" placeholder="MÉDICO"> </div>
+                        <div class="inputSearch">
+                            <button id="btnBuscar" class="btn btnBig btnRed marginTB threeCamps"><a>BUSCAR</a></button>
+                        </div>
+                    </form>
+                    <br>
+                    <p align="center" class="sizeSmall"> Agenda tu cita seleccionando la especialidad y/o médico y luego haz click en el botón buscar </p>
+                        <br>
+                        <p align="center" id="notExitosa" style="color: red;"></p>
+                        <br>
+                        <h3 align="center">Médicos</h3>
+                        <br>
+                        {% for medico in medicos %}
+                        <div class="cardDoctor">
+                            <div class="cardBorder">
+                                <div class="cardContainer">
+                                    <div class="cardContent">
+                                        <div class="cardInline favoriteDoc">
+                                            <a href="">
+                                                <h4>{{ medico.persona.nombres }} {{ medico.persona.apellidos }}</h4> 
+                                            </a>
+                                        </div>
+                                        <div class="txtLightGray">
+                                            <p>{{ medico.especialidad.nombre }}</p>
+                                        </div>
+                                        <div> </div>
+                                    </div>
+                                    <div class="txtRight"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <br>
+                        <h4 align="center">Escoge una fecha y hora de atención</h4>
+                        <br>
+                        <div>
+                            <form id="reserva" method="POST" action="/agendarcita/elegirmedico/"
+                            accept-charset="UTF-8" class="formSearch">
+                                {% csrf_token %}
+                                <select name="medico" id="id-espec">
+                                    {% for medico in medicos %}
+                                    <option value="{{ medico.persona.id }}">{{ medico.persona }}</option>
+                                    {% endfor %}
+                                </select>
+                                <input id="reservaFecha" type="datetime-local" name="fecha_consulta" step="1800">
+
+                                <div class="inputSearch">
+                                    <button id="btnReservar" class="btn btnBig btnRed marginTB"><a>RESERVAR</a></button>
+                                </div>
+                            </form>
+
+                        </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://www.clinicapj.org.pe/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/custom.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/clinica.js" type="text/javascript"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122325028-2" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-122325028-2');
+    </script>
+    <script src="https://www.clinicapj.org.pe/js/manager.js" type="text/javascript"></script>
+    <script src="https://malsup.github.io/jquery.form.js"></script> 
+    <script type="text/javascript">
+        $(document).ready(function () { 
+            var dataAppOrig = { 
+                datos: { 
+                    agregafavorito: 'https://www.clinicapj.org.pe/cuenta/medicos/actualiza-favorito/', 
+                    buscarpagina: 'https://www.clinicapj.org.pe/cuenta/buscar-pagina/' 
+                } 
+            }; 
+            var scripts = new Manager(dataAppOrig); 
+            scripts.initBusquedaMedico(); 
+            $('#reserva').ajaxForm(function() { 
+                alert("Gracias por su reserva"); 
+            }); 
+        });
+        const fechapicker = document.getElementById("reservaFecha");
+   </script>
+    
+</body>
+
+</html>

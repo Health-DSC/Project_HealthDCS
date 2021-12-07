@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/Health-PNG-Image.png' %}">
+    <link rel="stylesheet" href="{% static '/lato.css' %}">
+    <link rel="stylesheet" href="{% static '/styles.css' %}">
+    
+    <title>Preguntas Frecuentes - Health DSC</title>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MHSSZBT"></script>
+    <script type="text/javascript">
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MHSSZBT');
+    </script>
+    <title>PREGUNTAS FRECUENTES - Clínica Centenario Peruano Japonesa</title>
+</head>
+
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHSSZBT" height="0" width="0" style="display:none; visibility:hidden"> </iframe>
+    </noscript>
+    
+    <header>
+        <nav class="headerContainer">
+            <img class="loadLazy visibleLazy" data-src="{% static '/img/Health-PNG-Image.png'%}" alt="
+            " src="{% static '/img/Health-PNG-Image.png'%}">
+            <a class="headerLogo">Health DSC</a>
+            <ul class="headerMenu bold">
+                <li class="menuLink  "> <a href="/Nosotros/"> NOSOTROS </a> </li>
+
+                <li class="menuLink  "> <a href="/Servicios/"> SERVICIOS </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Cardiología</a> </li>
+                        <li class="subMenuLink"> <a>Dermatología</a> </li>
+                        <li class="subMenuLink"> <a>Neurología</a> </li>
+                        <li class="subMenuLink"> <a>Oncología</a> </li>
+                    </ul>
+
+                </li>
+
+                <li class="menuLink  "> <a href="/Especialidades/"> ESPECIALIDADES </a> </li>
+                <li class="menuLink  "> 
+                    <a> CONTACTO </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Correo oficial: clinica@gmail.com</a><br> </li>
+                        <li class="subMenuLink"> <a>Central telefónica: 987654321</a> </li>
+                    </ul>
+                </li>
+                <li class="menuLink  "> <a  href="/PreguntasFrecuentes/"> PREGUNTAS FRECUENTES </a> </li>
+                
+                <li class="menuLink imgRight">
+					<a href="/iniciarsesion/"> <img class="loadLazy avatarLogin" 
+                        data-src="{% static '/img/user.svg'%}" alt=""> <label>INICIAR SESIÓN</label> </a>
+				</li>
+                    
+                <div class="box-general subMenu right-pos">
+                        <div class="centralTelefonica">
+                            <div class="titulosCentral">&nbsp;
+                        </div>
+                </div>
+                        
+            </ul>
+            <div class="iconMovil openMenu">
+                <div class="nav-icon"> <span></span> <span></span> <span></span> <span></span> </div> <span class="menu-title open">menú</span> <span class="menu-title close">cerrar</span> </div>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="contentSlider"> <img src="{% static '/img/BANNER.jpg'%}"> </div>
+        <div class="contentBody centerBody   containerClinica2">
+            <div class="contView75">
+                <h2 align="center">PREGUNTAS FRECUENTES</h2>
+                <br>
+                
+                <div id="preguntas" class="faq">
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>¿Cómo puedo reservar una cita?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus fas fa-minus hide"></i> </div>
+                        <div class="accordionContent" style="display: none;">
+                            <p>Puede hacerlo  través de la página web.</p>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>¿Es necesario crear un usuario en la web?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Sí, la creación del usuario es requisito fundamental para poder agendar una cita médica. Esto nos permitirá atenderlo de una manera más eficiente.</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>¿Puedo ver mis resultados de laboratorio a través de la web?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Sí, para ello basta que ingrese a la opción “LABORATORIO” en la parte superior, ingrese su usuario y contraseña (los cuales son su número de historia clínica para ambos casos).</p>
+                            <p style="text-align: justify;">&nbsp;</p>
+                            <p style="text-align: justify;">Una vez completado esta información podrá acceder a todos los resultados históricos de sus exámenes de laboratorio y descargarlos en PDF e imprimirlos si así lo desea.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>¿Puedo registrar a otras personas bajo mi usuario y contraseña?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Sí, como miembro titular podrá registrar a sus familiares y gestionar sus citas médicas.</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>¿Puedo generar mi usuario y agendar citas, aunque nunca me haya atendido previamente en la Clínica?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Sí, puede crear su usuario y generar citas desde la web en cualquier momento.</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>¿Puedo anular o reprogramar alguna cita si ya la he pagado?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Sí, en este caso debe comunicarse con la Clínica para poder anular o reprogramar su cita.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>He realizado todo el proceso de registro de usuario pero no recibo el correo de confirmación, ¿Qué hago?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Revise en su bandeja de SPAM o Correos No Deseados si aparece el correo. De no encontrar el correo, póngase en contacto con nuestra
+                                central de ayuda, indicando esta situación. Se le solicitarán sus datos personales para verificar su identidad y luego derivar su caso a nuestra área de sistemas para darle solución a su problema.</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>He realizado todo el proceso de registro de usuario, he recibido y confirmado el correo, pero aun así no puedo acceder, ¿Qué hago?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Póngase en contacto con nuestra central de ayuda, indicando esta situación. Se le solicitarán sus datos personales para verificar su identidad y luego derivar su caso a nuestra área de sistemas para darle solución
+                                a su problema.</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>Al intentar iniciar sesión, me indica usuario inactivo.</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Debe ingresar el tipo y número de documento de identidad con el que se registró y luego presionar la opción "¿Olvidaste tu contraseña?" en la parte inferior de la pantalla.</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>¿Es necesario contar con un correo electrónico para crear el usuario en la aplicación o la web?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p style="text-align: justify;">Sí, el correo electrónico es un requisito obligado para el proceso de creación del usuario en la aplicación o la web. Además, se validará que dicha dirección de correo electrónico esté activa.</p>
+                        </div>
+                    </div>
+                    <div class="accordionContainer">
+                        <div class="accordionTitulo">
+                            <h4>Ya tengo mi cuenta activa, pero cuando intento modificar mi nombre o documento de identidad no es posible realizarlo, ¿Qué hago?</h4> <i class="iconPlus fas fa-plus"></i> <i class="iconMinus hide fas fa-minus"></i> </div>
+                        <div class="accordionContent">
+                            <p>Para asegurar la identidad efectiva de las personas, el nombre y documento de identidad no son modificables a través de la WEB. Póngase en contacto con nuestra central ayuda o de manera presencial en la
+                                Clínica, para poder realizar modificaciones de estos datos. Se le realizarán preguntas de validación o se le solicitará que presente su documento de identidad para verificar su identidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://www.clinicapj.org.pe/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/lazysizes.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/custom.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/clinica.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/jquery.datetimepicker.full.min.js" defer="" type="text/javascript"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122325028-2" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-122325028-2');
+    </script>
+    <script src="https://www.clinicapj.org.pe/js/web.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { var dataAppOrig = { contenido: { buscar: 'https://www.clinicapj.org.pe/buscar-faq', token: '8sse3fUtA7Ctf5bHTinwPKTwhEXWEyck4BboTHnn', url: 'https://www.clinicapj.org.pe' } }; var scripts = new Manager(dataAppOrig); scripts.initBuscarPregunta(); });
+    </script>
+</body>
+
+</html>
