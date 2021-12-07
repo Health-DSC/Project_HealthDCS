@@ -1,0 +1,123 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/Health-PNG-Image.png' %}">
+    <link rel="stylesheet" href="{% static '/lato.css' %}">
+    <link rel="stylesheet" href="{% static '/styles.css' %}">
+    
+    <title>Nosotros - Health DSC</title>
+   
+</head>
+
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHSSZBT" height="0" width="0" style="display:none; visibility:hidden"> </iframe>
+    </noscript>
+    
+    <header>
+        <nav class="headerContainer">
+            <img class="loadLazy visibleLazy" data-src="{% static '/img/Health-PNG-Image.png'%}" alt="
+            " src="{% static '/img/Health-PNG-Image.png'%}">
+            <a class="headerLogo">Health DSC</a>
+            <ul class="headerMenu bold">
+                <li class="menuLink  "> <a href="/Nosotros/"> NOSOTROS </a> </li>
+
+                <li class="menuLink  "> <a href="/Servicios/"> SERVICIOS </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Cardiología</a> </li>
+                        <li class="subMenuLink"> <a>Dermatología</a> </li>
+                        <li class="subMenuLink"> <a>Neurología</a> </li>
+                        <li class="subMenuLink"> <a>Oncología</a> </li>
+                    </ul>
+
+                </li>
+
+                <li class="menuLink  "> <a href="/Especialidades/"> ESPECIALIDADES </a> </li>
+                <li class="menuLink  "> 
+                    <a> CONTACTO </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Correo oficial: clinica@gmail.com</a><br> </li>
+                        <li class="subMenuLink"> <a>Central telefónica: 987654321</a> </li>
+                    </ul>
+                </li>
+                <li class="menuLink  "> <a  href="/PreguntasFrecuentes/"> PREGUNTAS FRECUENTES </a> </li>
+                <li class="menuLink imgRight">
+					<a href="/iniciarsesion/"> <img class="loadLazy avatarLogin" 
+                        data-src="{% static '/img/user.svg'%}" alt=""> <label>INICIAR SESIÓN</label> </a>
+				</li>
+                        
+            </ul>
+    
+        </nav>
+    </header>
+    <main>
+        <div class="contentSlider"> <img src="{% static '/img/BANNER.jpg'%}"> </div>
+        <div class="contentBody ">
+            <div class="contentBody containerClinica   containerClinica2">
+                <div class="contView75">
+                    <h2 align="center">NOSOTROS</h2>
+                        <div class="owl-nav">
+                            <button type="button" role="presentation" class="owl-prev disabled"><i class="fas fa-angle-left"></i></button>
+                            <button type="button" role="presentation" class="owl-next"><i class="fas fa-angle-right"></i></button>
+                        </div>
+                        <div class="owl-dots">
+                            <button role="button" class="owl-dot active"><span></span></button>
+                            <button role="button" class="owl-dot"><span></span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="contentHistory show" id="contentHistory4">
+                        <div class="contentHistoryText">
+                            <p style="text-align: center;">El cáncer es una enfermedad que ha ido en aumento en los últimos años, es por ello que su rápida detección es tan importante para combatirlo y disminuir su tasa de mortalidad. Con ese objetivo, se plantea esta propuesta de página web que ayudará a mejorar los tiempos de atención y disminuirá los costos para los posibles pacientes oncológicos.
+                            </p>
+                            <br><br>
+                                <div style="text-align: center;"> <img src="{% static '/img/nosotros.jpg'%}"> </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="contView100 bgGray">
+                    <div class="contView75">
+                        <div class="gridTwoRow">
+                            <div class="contGrid">
+                                <div class="articleCircle">
+                                    <div class="articleImg"> <img src="https://www.clinicapj.org.pe/store-imagenes/clinica/mision.svg" alt=""> </div>
+                                    <h3 class="marginTB">NUESTRA MISIÓN</h3>
+                                    <p> Ser un sistema que permita la gestión de citas y tratamiento de un paciente, así como también ser apoyo para el médico al predecir resultados de pacientes con cáncer.
+                                        </p>
+                                </div>
+                            </div>
+                            <div class="contGrid">
+                                <div class="articleCircle">
+                                    <div class="articleImg"> <img src="https://www.clinicapj.org.pe/store-imagenes/clinica/vision.svg" alt=""> </div>
+                                    <h3 class="marginTB">NUESTRA VISIÓN</h3>
+                                    <p> Mejorar la calidad de vida de las personas y de los profesionales en la salud en el Perú. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+            
+    </main>
+    <script src="https://www.clinicapj.org.pe/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/custom.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/clinica.js" type="text/javascript"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122325028-2" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-122325028-2');
+    </script>
+
+</body>
+
+</html>

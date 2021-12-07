@@ -1,0 +1,146 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/Health-PNG-Image.png' %}">
+    <link rel="stylesheet" href="{% static '/lato.css' %}">
+    <link rel="stylesheet" href="{% static '/styles.css' %}">
+    
+    <title>Subir MIR - Health DSC</title>
+    
+</head>
+
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHSSZBT" height="0" width="0" style="display:none; visibility:hidden"> </iframe>
+    </noscript>
+    
+    <header>
+        <nav class="headerContainer">
+            <img class="loadLazy visibleLazy" data-src="{% static '/img/Health-PNG-Image.png'%}" alt="
+            " src="{% static '/img/Health-PNG-Image.png'%}">
+            <a class="headerLogo">Health DSC</a>
+            <ul class="headerMenu bold">
+                <li class="menuLink  "> <a href="/Nosotros/"> NOSOTROS </a> </li>
+
+                <li class="menuLink  "> <a href="/Servicios/"> SERVICIOS </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Cardiología</a> </li>
+                        <li class="subMenuLink"> <a>Dermatología</a> </li>
+                        <li class="subMenuLink"> <a>Neurología</a> </li>
+                        <li class="subMenuLink"> <a>Oncología</a> </li>
+                    </ul>
+
+                </li>
+
+                <li class="menuLink  "> <a href="/Especialidades/"> ESPECIALIDADES </a> </li>
+                <li class="menuLink  "> 
+                    <a> CONTACTO </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Correo oficial: clinica@gmail.com</a><br> </li>
+                        <li class="subMenuLink"> <a>Central telefónica: 987654321</a> </li>
+                    </ul>
+                </li>
+                <li class="menuLink  "> <a  href="/PreguntasFrecuentes/"> PREGUNTAS FRECUENTES </a> </li>
+                <li class="menuLink imgRight">
+					<a href="/iniciarsesion/"> <img class="loadLazy avatarLogin" 
+                        data-src="{% static '/img/user.svg'%}" alt=""> <label>INICIAR SESIÓN</label> </a>
+				</li>
+                        
+            </ul>
+    
+        </nav>
+    </header>
+    <main>
+        <div class="contentSlider"> <img src="{% static '/img/BANNER.jpg'%}"> </div>
+        <div class="contentBody ">
+            <div class="centerBody allWithMenu">
+                <div class="contentMenu">
+                    <div class="links">
+                        <div class="linksContainer">
+                            <a href="/AgendarCita/" class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p >Agendar cita</p>
+                                </div>
+                            </a>
+                            <a href="/MisCitas/" class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Mis citas</p>
+                                </div>
+                            </a>
+                            <a href="/Reporte/" class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Historial Médico</p> 
+                                </div>
+                            </a>
+                            <a href="/SubirImagen/" class="login-menu linksBorder  linkActive ">
+                                <div class="linkContent marginTB">
+                                    <p>Análisis de MIR</p>
+                                </div>
+                            </a>
+                            <a href="/MiCuenta/"  class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Mi cuenta</p>
+                                </div>
+                            </a>
+                            <a href="/notificaciones/" class="login-menu linksBorder">
+                                <div class="linkContent marginTB">
+                                    <p>Notificaciones</p>
+                                </div>
+                            </a>
+                            <a href="/Portada/" class="login-menu linksBorder ">
+                                <div class="linkContent marginTB">
+                                    <p>Cerrar Sesión</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contentWithMenu">
+                    <div class="containerAll">
+                        <h2 align ="center">Análisis de Imágenes de Resonancia</h2>
+                        <br>
+                        <br>
+                        <div class="message">
+
+                            <form method="POST" accept-charset="UTF-8" id="formEditPerf" class="formEditPerf" enctype="multipart/form-data" novalidate="novalidate">
+                                <input name="_token" type="hidden" value="rw5xUdg1xBqVNY7m2bCmx3Fmf7ql4xiJjwks7JyZ">
+                                <div class="contCamp centerCamp">
+                                    
+                                    <label class="photoFile" for="subirFoto" ><img src="{% static '/img/check.jpg'%}" style="width: 70px;">
+
+                                        <input type="file" id="subirFoto" name="foto_perfil"> 
+                                    </label>
+                                    <a><span>Subida exitosa, le notificaremos cuando los resultados estén listos</span></a>
+                                </div>
+                                
+                            </form>
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://www.clinicapj.org.pe/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/custom.js" type="text/javascript"></script>
+    <script src="https://www.clinicapj.org.pe/js/clinica.js" type="text/javascript"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122325028-2" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-122325028-2');
+    </script>
+    <script src="https://www.clinicapj.org.pe/js/manager.js" type="text/javascript"></script>
+    
+</body>
+
+</html>
