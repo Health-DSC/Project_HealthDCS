@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template de prueba</title>
+</head>
+<body>
+    <h1>Template de listado de usuarios</h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+            </tr>
+        </thead>
+        <body>
+            {% for persona in persona%}
+            <tr>
+                <td>{{ persona.nombres}}</td>
+                <td>{{ persona.apellidos}}</td>
+                <td>{{ persona.correo_electronico}}</td>
+            </tr>
+            {% endfor %}
+        </body>
+    </table>
+    <h4>Volver a registrar usuario </h4>
+    <a href="{% url 'registropaciente' %}"> Registrar Usuario </a>
+</body>
+</html>

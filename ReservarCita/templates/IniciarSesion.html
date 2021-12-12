@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/Health-PNG-Image.png' %}">
+    <link rel="stylesheet" href="{% static '/lato.css' %}">
+    <link rel="stylesheet" href="{% static '/styles.css' %}">
+    <title>Inicio de Sesión - HEALTH DCS</title>
+</head>
+
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHSSZBT" height="0" width="0" style="display:none; visibility:hidden"> </iframe>
+    </noscript>
+    
+    <header>
+        <nav class="headerContainer">
+            <img class="loadLazy visibleLazy" data-src="{% static '/img/Health-PNG-Image.png' %}" alt="" src="{% static '/img/Health-PNG-Image.png' %}">
+            <a class="headerLogo">Health DSC</a>
+            <ul class="headerMenu bold">
+                
+                <li class="menuLink  "> <a href="Nosotros.html"> NOSOTROS </a> </li>
+                <li class="menuLink  "> <a href="Servicios.html"> SERVICIOS </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Centro de Imágenes</a> </li>
+                        <li class="subMenuLink"> <a>Centro Quirúrgico</a> </li>
+                        <li class="subMenuLink"> <a>Laboratorio</a> </li>
+                        <li class="subMenuLink"> <a>Servicios Adicionales</a> </li>
+    
+                    </ul>
+                </li>
+                <li class="menuLink  "> <a href="Especialidades.html"> ESPECIALIDADES </a> </li>
+                
+                <li class="menuLink  "> <a> CONTACTO </a>
+                    <ul class="subMenu" style="display: none;">                    
+                        <li class="subMenuLink"> <a>Correo oficial: clinica@gmail.com</a><br> </li>
+                        <li class="subMenuLink"> <a>Central telefónica: 987654321</a> </li>
+                        
+    
+                    </ul>
+                </li>
+
+                <li class="menuLink  "> <a href="PreguntasFrecuentes.html"> PREGUNTAS FRECUENTES </a> </li>
+                <li class="menuLink imgRight">
+					<a href="{% url 'iniciarsesion' %}"> <img class="loadLazy avatarLogin"
+                        data-src="{% static '/img/user.svg' %}" alt=""> <label>INICIAR SESIÓN</label> </a>
+				</li>
+                        
+            </ul>
+    
+        </nav>
+    </header>
+
+    <main>
+        <div class="contentBody ">
+            <div class="centerBody allWithoutMenu">
+                <h2>INICIA SESIÓN</h2>
+                <br>
+                <form method="POST" action="https://www.clinicapj.org.pe/iniciar-sesion" accept-charset="UTF-8" class="formCenter">
+                    <input name="_token" type="hidden" value="GIjPRvdzEF88zAsdbk5cmsOJweVNPe0DtQAhPOkl">
+                    <div class="contCamp centerCamp">
+                        <select id="tipdoc" name="tipo_documento">
+                            <option selected="selected" value="">Tipo de Usuario</option>
+                            <option value="D">ADMINISTRADOR</option>
+                            <option value="X">USUARIO</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="contCamp animateCamp">
+                        <label for="numero_documento">Correo</label>
+                        <input type="text" name="numero_documento" pattern="[a-zA-Z0-9]+" minlength="8" maxlength="15" required> </div>
+                    <div class="contCamp animateCamp">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" required> </div>
+                    <div class="contCamp centerCamp">
+                        <label class="checkCamp" for="chekear">
+                            <input type="checkbox" id="chekear"> <span class="boxCheck"> <i class="fas fa-check"></i> </span> <span>Recordar</span> </label>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="contBtnCenter">
+                        <button class="btn btnBig btnRed" type="submit">Acceder Ahora</button>
+                    </div>
+                    <br>
+                    <div align="center"> <a href="RecuperoContraseña.html" class="sizeSmall txtGray">¿Olvidaste tu contraseña?</a> </div>
+                    <br>
+                    <div align="center">
+                        <p class="sizeSmall txtGray">¿Aún no te registras?</p><br> <a class="btn btnBig txtRed" href="{% url 'registropaciente' %}"><b>CREAR UNA CUENTA NUEVA</b></a> </div>
+                    <br>
+
+                </form>
+            </div>
+        </div>
+    </main>
+    
+</body>
+<script src="https://www.clinicapj.org.pe/js/jquery-3.3.1.js" type="text/javascript"></script>
+<script src="https://www.clinicapj.org.pe/js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="https://www.clinicapj.org.pe/js/sweetalert2.all.min.js" type="text/javascript"></script>
+<script src="https://www.clinicapj.org.pe/js/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+<script src="https://www.clinicapj.org.pe/js/custom.js" type="text/javascript"></script>
+<script src="https://www.clinicapj.org.pe/js/clinica.js" type="text/javascript"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122325028-2" type="text/javascript"></script>
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-122325028-2');
+</script>
+
+</html>
