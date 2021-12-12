@@ -1,2 +1,0 @@
-# Health-DCS---Templates
-Templates
